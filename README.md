@@ -2,7 +2,7 @@
 a jquery address selector for China
 ----------
 
-**demo**
+### [demo](http://0xfc.cn/2015/08/11/address/) ###
 
 > demo/test.html
 
