@@ -66,3 +66,8 @@ a jquery address selector for China
 > initVillage: default: '南礼士路社区居委会'.
 >
 > fineness: default: 'county'.  地址选择的精细度，可取值：[‘county’, 'town', 'village']
+>
+> *url*: the component path. exp. if the component is in lib/jquery-wan-address-select, this should be 'lib/' 
+
+**important**
+options' url must be set, otherwise the component can't find the data it needs. or you can put the build/data in your own server, and change the getData function in build/wan-address-select.js.
