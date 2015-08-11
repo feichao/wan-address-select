@@ -11,14 +11,47 @@ a jquery address selector for China
 > - include bulid/wan-address-select.css 
 > - include build/wan-address-select.js
 > - in your html:
+> 
 > ```html
 ><div class="wan-address-select"></div>
->```
+> ```
 
 **how to use**
- 
 
-> `$(".wan-spinner").WanAddressSelect(options);`
+> init component
+> ```javascript
+> $(".wan-spinner").WanAddressSelect(options);
+> ```
+
+
+> get value
+> ```javascript
+> $(".wan-spinner").WanAddressSelect("val");
+>
+> result: {
+	"province" : "北京市",
+	"city" : "市辖区",
+	"county" : "西城区",
+	"town" : "月坛街道办事处"
+}
+> ```
+
+
+> get value and id
+> ```javascript
+> $(".wan-spinner").WanAddressSelect("idval");
+>
+> result: {
+	"provinceId" : 110,
+	"province" : "北京市",
+	"cityId" : 110100000000,
+	"city" : "市辖区",
+	"countyId" : 110102000000,
+	"county" : "西城区",
+	"townId" : 110102007000,
+	"town" : "月坛街道办事处"
+}
+> ```
 
 **options**
 
@@ -33,5 +66,3 @@ a jquery address selector for China
 > initVillage: default: '南礼士路社区居委会'.
 >
 > fineness: default: 'county'.  地址选择的精细度，可取值：[‘county’, 'town', 'village']
-
-
