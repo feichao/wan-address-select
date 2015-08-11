@@ -213,6 +213,7 @@
   };
 
   WanAddressSelect.prototype.getData = function(provinceId, cb) {
+    console.log(this.options.url + 'build/data/' + this.options.fineness + '/' + provinceId + '.json');
     $.get(this.options.url + 'build/data/' + this.options.fineness + '/' + provinceId + '.json', function(result) {
       cb(result);
     }, 'json');
