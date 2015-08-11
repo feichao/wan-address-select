@@ -116,7 +116,8 @@
       initCounty: '东城区',
       initTown: '东华门街道办事处',
       initVillage: '多福巷社区居委会',
-      fineness: 'county'
+      fineness: 'county',
+      url: ''
     };
 
     this.options = $.extend({}, this.defaults, options);
@@ -212,7 +213,11 @@
   };
 
   WanAddressSelect.prototype.getData = function(provinceId, cb) {
-    $.get('http://localhost:4001/data/' + this.options.fineness + '/' + provinceId + '.json', function(result) {
+    if (!window.location.origin) {
+      window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+    }
+    var url = window.location.origin + '/' + this.options.url;
+    $.get(url + 'jquery-wan-address-select/build/data/' + this.options.fineness + '/' + provinceId + '.json', function(result) {
       cb(result);
     }, 'json');
   };
