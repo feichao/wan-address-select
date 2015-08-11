@@ -13,6 +13,7 @@
   <div class="wan-address-select">
   </div>
   <input id="getValue" type="button" value="get value"/>
+  <input id="getValueAndId" type="button" value="get value and id"/>
   <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
   <script type="text/javascript" src="../build/wan-address-select.js"></script>
   <script type="text/javascript">
@@ -23,12 +24,15 @@
       initCounty: '西城区',
       initTown: '月坛街道办事处',
       initVillage: '南礼士路社区居委会',
-      fineness: 'village'
+      fineness: 'town'
     };
     $(".wan-address-select").WanAddressSelect(options);
 
     $("#getValue").on("click", function(){
       alert(JSON.stringify($(".wan-address-select").WanAddressSelect('val')));
+    });
+    $("#getValueAndId").on("click", function(){
+      alert(JSON.stringify($(".wan-address-select").WanAddressSelect('idval')));
     });
   });
   </script>

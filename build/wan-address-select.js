@@ -320,6 +320,27 @@
     };
   };
 
+  var getValueAndId = function(element) {
+  	var selectProvince = element.children('#province').children(':selected');
+  	var selectCity = element.children('#city').children(':selected');
+  	var selectCounty = element.children('#county').children(':selected');
+  	var selectTown = element.children('#town').children(':selected');
+  	var selectVillage = element.children('#village').children(':selected');
+
+    return {
+    	provinceId: selectProvince.data('id'),
+      province: selectProvince.val(),
+      cityId: selectCity.data('id'),
+      city: selectCity.val(),
+      countyId: selectCounty.data('id'),
+      county: selectCounty.val(),
+      townId: selectTown.data('id'),
+      town: selectTown.val(),
+      villageId: selectVillage.data('id'),
+      village: selectVillage.val(),
+    };
+  };
+
   $.fn.WanAddressSelect = function() {
     var arg = arguments[0];
     if (typeof(arg) === 'object') {
@@ -331,13 +352,15 @@
       return this;
     } else {
       if ($(this).length > 1) {
-        $.error('can\'t get value because of multiple elements are slected via selector "' + $(this).selector + '" !!!!');
+        $.error('can\'t get value because multiple elements are slected via selector "' + $(this).selector + '" !!!!');
       } else {
         switch (arg) {
           case 'val':
             return getValue($(this));
-          default: 
-          	$.error('can\'t find method: "' + arg + '" !!!!');
+          case 'idval':
+            return getValueAndId($(this));
+          default:
+            $.error('can\'t find method: "' + arg + '" !!!!');
         }
       }
     }
