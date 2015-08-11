@@ -71,4 +71,4 @@ a jquery address selector for China
 
 **important**
 
-options' url must be set, otherwise the component can't find the data it needs. or you can put the build/data in your own server, and change the getData function in build/wan-address-select.js.
+options' url default is 'https://raw.githubusercontent.com/feichao/wan-address-select/master/'. Or you can put the build/data in your own server, and use your owe url.
