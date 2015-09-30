@@ -67,8 +67,8 @@ a jquery address selector for China
 >
 > fineness: default: 'county'.  地址选择的精细度，可取值：[‘county’, 'town', 'village']
 >
-> *url*: the component path. exp. if the component is in lib/jquery-wan-address-select, this should be 'lib/' 
+> *url*: the map-data url.
 
 **important**
 
-options' url default is 'https://raw.githubusercontent.com/feichao/wan-address-select/master/'. Or you can put the build/data in your own server, and use your owe url.
+options' url default is 'http://7xn5wa.com1.z0.glb.clouddn.com/'. Or you can put the build/data in your own server, and use your owe url.

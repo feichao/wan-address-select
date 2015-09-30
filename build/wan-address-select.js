@@ -117,7 +117,7 @@
       initTown: '东华门街道办事处',
       initVillage: '多福巷社区居委会',
       fineness: 'county',
-      url: 'https://raw.githubusercontent.com/feichao/wan-address-select/master/'
+      url: 'http://7xn5wa.com1.z0.glb.clouddn.com/'
     };
 
     this.options = $.extend({}, this.defaults, options);
@@ -213,8 +213,7 @@
   };
 
   WanAddressSelect.prototype.getData = function(provinceId, cb) {
-    console.log(this.options.url + 'build/data/' + this.options.fineness + '/' + provinceId + '.json');
-    $.get(this.options.url + 'build/data/' + this.options.fineness + '/' + provinceId + '.json', function(result) {
+    $.get(this.options.url + this.options.fineness + provinceId + '.json', function(result) {
       cb(result);
     }, 'json');
   };
